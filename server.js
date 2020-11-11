@@ -4,7 +4,7 @@ const movieRouter = require("./src/api/movies");
 const { loadDatabase } = require("./src/api/movies/service");
 app.use(express.json());
 
-//middleware para las claves
+//middleware for the keys, used in Postman
 app.use((req, res, next) => {
   console.log("paso por aqui");
   if (req.headers.clavesupersegura === "1234") {
