@@ -6,7 +6,6 @@ app.use(express.json());
 
 //middleware for the keys, used in Postman
 app.use((req, res, next) => {
-  console.log("paso por aqui");
   if (req.headers.clavesupersegura === "1234") {
     next();
   } else {

@@ -1,7 +1,53 @@
-[
-  { "id": 1, "name": "Taxi Driver", "categoria": "Cine Negro", "like": false },
-  { "id": 2, "name": "El Padrino", "categoria": "Drama", "like": true },
-  { "id": 3, "name": "GoodFellas", "categoria": "Mafia", "like": true },
-  { "id": 4, "name": "American Pie", "categoria": "Comedia", "like": true },
-  { "name": "Matrix", "categoria": "Sci-fi", "id": 0.6493610207291325 }
-]
+{
+  "1": {
+    "id": 1,
+    "name": "Taxi Driver",
+    "categoria": "Cine Negro",
+    "like": false
+  },
+  "2": {
+    "id": 2,
+    "name": "El Padrino",
+    "categoria": "Drama",
+    "like": true
+  },
+  "3": {
+    "id": 3,
+    "name": "GoodFellas",
+    "categoria": "Mafia",
+    "like": true
+  },
+  "4": {
+    "id": 4,
+    "name": "American Pie",
+    "categoria": "Comedia",
+    "like": true
+  },
+  "5": {
+    "name": "Pelicula nueva",
+    "categoria": "si",
+    "like": false,
+    "id": 5
+  },
+  "6": {
+    "name": "Pelicula nueva",
+    "categoria": "si",
+    "like": false,
+    "id": 6
+  },
+  "7": {
+    "name": "Pelicula nueva",
+    "categoria": "si",
+    "like": false,
+    "id": 7
+  },
+  "8": {
+    "name": "Los vengadores: La era de Ultron",
+    "id": 8
+  },
+  "9": {
+    "name": "Spiderman",
+    "id": 9
+  },
+  "size": 9
+}

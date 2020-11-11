@@ -1,7 +1,7 @@
 const express = require("express");
 const service = require("./service");
 const router = express.Router();
-const { createMovie, loadDatabase, getMovies, isLike } = require("./service");
+const { createMovie, isLike, getMovie } = require("./service");
 
 // Esto se hace con el PostMan
 //creamos ID para las peliculas
@@ -13,6 +13,7 @@ router.post("/", (req, res) => {
 ///////likes
 router.get("/like/:id", (req, res) => {
   let id = Number(req.params.id);
+
   res.json(isLike(id));
 });
 
@@ -43,10 +44,7 @@ router.put("/:id", (req, res) => {
 });
 //Muestra solo 1 pelicula
 router.get("/:id", (req, res) => {
-  console.log("Estoy aqui");
-  let id = Number(req.params.id);
-  let movieEdit = moviesDB.find((movie) => movie.id === id);
-  res.json(movieEdit);
+  res.json(getMovie(req.params.id));
 });
 //Borra 1 pelicula
 router.delete("/:id", (req, res) => {
@@ -56,7 +54,7 @@ router.delete("/:id", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.json(getMovies());
+  res.json(service.getMovies());
 });
 
 module.exports = router;
