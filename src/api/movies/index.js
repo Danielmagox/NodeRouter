@@ -1,38 +1,12 @@
 const express = require("express");
+const service = require("./service");
 const router = express.Router();
-let moviesDB = [
-  {
-    id: 1,
-    name: "Taxi Driver",
-    categoria: "Cine Negro",
-    like: false,
-  },
-  {
-    id: 2,
-    name: "El Padrino",
-    categoria: "Drama",
-    like: true,
-  },
-  {
-    id: 3,
-    name: "GoodFellas",
-    categoria: "Mafia",
-    like: true,
-  },
-  {
-    id: 4,
-    name: "American Pie",
-    categoria: "Comedia",
-    like: true,
-  },
-];
+const { createMovie, loadDatabase, getMovies } = require("./service");
 
 // Esto se hace con el PostMan
 //creamos ID para las peliculas
 router.post("/", (req, res) => {
-  let movie = req.body;
-  movie.id = Math.random();
-  moviesDB.push(movie);
+  const movie = createMovie(req.body);
   res.json(movie);
 });
 
@@ -83,7 +57,7 @@ router.delete("/:id", (req, res) => {
 });
 
 router.get("/", (req, res) => {
-  res.json(moviesDB);
+  res.json(getMovies());
 });
 
 module.exports = router;
