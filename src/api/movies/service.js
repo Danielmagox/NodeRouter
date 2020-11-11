@@ -29,6 +29,10 @@ const saveDatabase = () => {
   });
 };
 
+const getMovieIndex = (id) => {
+  return moviesDB.findIndex((movie) => movie.id === id);
+};
+
 function getMovies() {
   return moviesDB;
 }
@@ -41,4 +45,8 @@ function createMovie(movie) {
   return movie;
 }
 
-module.exports = { createMovie, loadDatabase, getMovies };
+const isLike = (id) => {
+  return moviesDB[getMovieIndex(id)].like;
+};
+
+module.exports = { createMovie, loadDatabase, getMovies, isLike };

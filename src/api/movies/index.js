@@ -1,7 +1,7 @@
 const express = require("express");
 const service = require("./service");
 const router = express.Router();
-const { createMovie, loadDatabase, getMovies } = require("./service");
+const { createMovie, loadDatabase, getMovies, isLike } = require("./service");
 
 // Esto se hace con el PostMan
 //creamos ID para las peliculas
@@ -13,8 +13,7 @@ router.post("/", (req, res) => {
 ///////likes
 router.get("/like/:id", (req, res) => {
   let id = Number(req.params.id);
-  let movieEditIndex = moviesDB.findIndex((movie) => movie.id === id);
-  res.json(moviesDB[movieEditIndex].like);
+  res.json(isLike(id));
 });
 
 router.get("/like", (req, res) => {
